@@ -31,3 +31,7 @@ function calc_plugin_shortcode() {
 }
 
 add_shortcode("calc-plugin", "calc_plugin_shortcode");
+
+
+include(plugin_dir_path(__FILE__) . 'admin/configurations.php');
+
