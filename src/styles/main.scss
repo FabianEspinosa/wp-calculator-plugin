@@ -1,15 +1,55 @@
 .calc-plugin {
   display: flex;
   justify-content: center;
-  padding: 1.5rem;
-  background-color: rgb(207, 167, 167);
+  font-family: 'Press Start 2P';
+}
+.iconsCont {
+  justify-content: flex-end;
+  display: flex;
+  gap: 0.5rem; 
+}
+.calc-buttons {
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  margin-top: auto;
   button {
-    border: 0;
-    border-radius: 0.5rem;
-    padding: 1rem 0.75rem;
-    cursor: pointer;
-    &:hover {
-      background-color: lightgray;
-    }
+    width: 30%;
   }
+}
+.calc-screen {
+  font-size: 3rem;
+  max-width: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.nes-container {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column; 
+  height: 30rem;
+  .title{
+    width: 1rem;
+  }
+}
+.calc-inputs {
+  display: flex;
+  gap: 1rem;
+  span {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+.calc-symbols {
+  display: flex;
+  font-size: 2rem;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  .isActive{
+    color: #fff;
+    text-decoration: none;
+    background-color: #ce372b;
+  } 
 }

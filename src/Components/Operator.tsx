@@ -1,11 +1,15 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
 interface Props {
-    calcOperator: string,
-    getOperator: (operator:string) => void
+  calcOperator: string,
+  isActive: boolean,
+  getOperator: (operator: string) => void
+}
+export default function Operator({ calcOperator, getOperator, isActive }: Props) {
+  const handleEvent = () => {    
+    getOperator(calcOperator)
   }
-  export default function Operator({calcOperator, getOperator}:Props) {   
-  return ( 
-    <div>{calcOperator}</div>
+  return (
+    <div className={`symbol nes-btn is-error ${isActive ? 'isActive' : ''}`} onClick={handleEvent}>{calcOperator}</div>
   )
 }

@@ -10,7 +10,6 @@
 * Author URI: https://www.linkedin.com/in/faehz/
 
 */
-
 function calc_plugin_shortcode() {
 
     $settings = get_option('calcUrlApi');
@@ -28,7 +27,25 @@ function calc_plugin_shortcode() {
     '>Al parece no tienes un URL configurada, <a href=".$a.">haz clic acá</a>
     para configurar una.    
     </div>";
-    }    
+    }
+      
+    add_filter('wp_headers', function($headers) {
+        $headers['Access-Control-Allow-Origin'] = '*';
+        return $headers;
+    });
+    wp_enqueue_style(
+        "calc_plugin_google_fonts_css",
+        "https://fonts.googleapis.com/css?family=Press+Start+2P",
+        [],
+        "1.0.0"
+    );
+    
+    wp_enqueue_style(
+        "calc_plugin_nes_css",
+        "https://unpkg.com/nes.css/css/nes.css",
+        [],
+        "1.0.0"
+    );
     
     wp_enqueue_script(
         "calc_plugin_js",
@@ -50,6 +67,8 @@ function calc_plugin_shortcode() {
 }
 
 add_shortcode("calc-plugin", "calc_plugin_shortcode");
+
+
 
 
 include(plugin_dir_path(__FILE__) . 'admin/configurations.php');

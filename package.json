@@ -14,5 +14,8 @@
   "license": "ISC",
   "devDependencies": {
     "@wordpress/scripts": "^25.5.1"
+  },
+  "dependencies": {
+    "nes.css": "^2.3.0"
   }
 }
