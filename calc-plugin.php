@@ -13,20 +13,39 @@
 
 function calc_plugin_shortcode() {
 
+    $settings = get_option('calcUrlApi');
+    $a =  admin_url( 'admin.php?page=calc-setting-admin' );    
+    $url = $settings['calcUrlApi']; 
+    if (empty($url)) {
+        return "<div style='
+        background-color: blueviolet;
+        color: white;
+        padding: 0.5rem;
+        text-align: center;
+        font-size: 25px;
+        font-family: monospace;
+        border-radius: 1rem;
+    '>Al parece no tienes un URL configurada, <a href=".$a.">haz clic acá</a>
+    para configurar una.    
+    </div>";
+    }    
+    
     wp_enqueue_script(
         "calc_plugin_js",
         plugin_dir_url(__FILE__) . "/build/index.js",
         [ "wp-element"],
         "0.1.0",
         true
-    );
-
+    );    
+    
     wp_enqueue_style(
         "calc_plugin_css",
         plugin_dir_url(__FILE__) . "/build/index.css"
     );
 
-    return "<div class='calc-plugin'></div>";
+     // Add the settings to a global variable
+
+    return "<div class='calc-plugin' calcUrl=".$url."></div>";
 
 }
 
