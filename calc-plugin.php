@@ -24,7 +24,7 @@ function calc_plugin_shortcode() {
         font-size: 25px;
         font-family: monospace;
         border-radius: 1rem;
-    '>Al parece no tienes un URL configurada, <a href=".$a.">haz clic acá</a>
+    '>Al parece no tienes una URL configurada, <a href=".$a.">haz clic acá</a>
     para configurar una.    
     </div>";
     }
